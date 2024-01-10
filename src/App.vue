@@ -19,14 +19,14 @@ export default {
   methods: {
     getCardsList() {
       axios.get(this.store.endpoint).then((response) => {
-        this.store.cardsList = response.data.data
+        this.store.cardsList = response.data.data;
+        console.log(this.store.cardsList)
       })
     }
   },
 
   created() {
     this.getCardsList();
-    console.log(this.store.cardsList)
   }
 }
 </script>

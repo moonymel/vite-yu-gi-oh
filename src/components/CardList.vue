@@ -1,11 +1,12 @@
 <script>
 import { store } from '../store';
-import CardList from './CardList.vue'
+
+import CardInfo from './CardInfo.vue'
 
 export default {
 
     components: {
-        CardList,
+        CardInfo,
     },
 
     data() {
@@ -18,9 +19,13 @@ export default {
 </script>
 
 <template lang="">
-    <main class="py-3">
-        <CardList />
-    </main>
+    <div>
+        <div class="container my-cont">
+            <div class="row my-row">
+                <CardInfo v-for="card, index in store.cardsList" :key="index" :card="card" />
+            </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss">
@@ -28,12 +33,7 @@ export default {
 @use '../styles/partials/mixins' as *;
 @use '../styles/partials/variables' as *;
 
-main {
-    background-color: $my_orange;
-
-    .my-cont {
-        background-color: white;
-    }
-
+.my-cont {
+    background-color: white;
 }
 </style>
