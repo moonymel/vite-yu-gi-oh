@@ -26,20 +26,22 @@ export default {
       })
     },
 
-    // getMyArchetypes() {
-    //   this.store.archetypesList.forEach((elem) => {
-    //     if (elem.archetype_name == this.cardsList.archetype) {
-    //       this.store.myArchetypesList.push(elem.archetype_name);
-    //     }
-    //   })
-    // },
+    getMyArchetypes() {
+      this.store.archetypesList.forEach((elem) => {
+        if (elem.archetype_name == this.cardsList.archetype) {
+          this.store.myArchetypesList.push(elem.archetype_name);
+        }
+      })
+
+      console.log(this.store.myArchetypesList)
+    },
 
     getArchetypes() {
       axios.get(this.store.apiArchetypes).then((response) => {
         this.store.archetypesList = response;
-        console.log(this.archetypesList);
+        console.log(this.store.archetypesList);
 
-        // this.getMyArchetypes();
+        this.getMyArchetypes();
       })
     },
   },
