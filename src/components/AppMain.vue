@@ -1,11 +1,14 @@
 <script>
 import { store } from '../store';
 import CardList from './CardList.vue'
+import AppSearch from './AppSearch.vue'
+
 
 export default {
 
     components: {
         CardList,
+        AppSearch,
     },
 
     data() {
@@ -18,7 +21,8 @@ export default {
 </script>
 
 <template lang="">
-    <main class="py-3">
+    <main>
+        <AppSearch />
         <CardList />
     </main>
 </template>

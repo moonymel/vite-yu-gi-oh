@@ -24,11 +24,29 @@ export default {
         this.store.cardsList = response.data.data;
         store.loading = false;
       })
-    }
+    },
+
+    // getMyArchetypes() {
+    //   this.store.archetypesList.forEach((elem) => {
+    //     if (elem.archetype_name == this.cardsList.archetype) {
+    //       this.store.myArchetypesList.push(elem.archetype_name);
+    //     }
+    //   })
+    // },
+
+    getArchetypes() {
+      axios.get(this.store.apiArchetypes).then((response) => {
+        this.store.archetypesList = response;
+        console.log(this.archetypesList);
+
+        // this.getMyArchetypes();
+      })
+    },
   },
 
   created() {
     this.getCardsList();
+    this.getArchetypes();
   }
 }
 </script>
