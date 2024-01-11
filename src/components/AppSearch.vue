@@ -6,6 +6,10 @@ export default {
         return {
             store
         }
+    },
+
+    methods: {
+
     }
 }
 </script>
@@ -14,13 +18,15 @@ export default {
     <div class="container sel-cont p-3">
         <div class="row">
             <div class="col-3">
-                <select id="archetypes" class="form-select">
+                <select id="filter" class="form-select" v-model="store.archetype">
                     <option value="" selected>Select archetype</option>
-                    <option></option>
+                    <option v-for="archetype, index in store.archetypes" :key="index" :value="archetype">
+                    {{ archetype }}
+                    </option>
                 </select>
             </div>
             <div class="col-3">
-                <button class="btn btn-success mx-2">Filter</button>
+                <button class="btn btn-success mx-2" @click="$emit('start_filter')">Filter</button>
                 <button class="btn btn-warning">Reset</button>
             </div>
         </div>
