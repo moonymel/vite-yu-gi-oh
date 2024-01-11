@@ -26,23 +26,21 @@ export default {
       let apiUrl = store.endpoint
 
       if (store.archetype !== '') {
-        apiUrl += `?name=${store.archetype}`;
+        apiUrl += `&archetype=${store.archetype}`;
       }
 
-      else {
-        axios.get(this.store.endpoint).then((response) => {
-          this.store.cardsList = response.data.data;
-          store.loading = false;
+      axios.get(apiUrl).then((response) => {
+        store.loading = true;
+        this.store.cardsList = response.data.data;
+        store.loading = false;
 
-          // this.store.cardsList.forEach((elem) => {
-          //   this.store.myArchetypesList.push(elem.archetype);
-          // })
+        // this.store.cardsList.forEach((elem) => {
+        //   this.store.myArchetypesList.push(elem.archetype);
+        // })
 
-          // console.log(this.store.myArchetypesList)
+        // console.log(this.store.myArchetypesList)
 
-        })
-
-      }
+      })
     },
 
     // getMyArchetypes() {
