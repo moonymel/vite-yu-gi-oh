@@ -21,7 +21,7 @@ export default {
     font-size: 50px;
 
     img {
-        width: 150px;
+        width: 80px;
     }
 }
 </style>

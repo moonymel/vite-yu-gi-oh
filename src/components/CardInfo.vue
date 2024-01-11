@@ -8,7 +8,7 @@ export default {
 
 <template lang="">
     <div class="my-card text-center">
-        <img v-for="image, index in card.card_images" :key="index" :src="image.image_url_small">
+        <img :src="card.card_images[0].image_url">
         <div class="title">{{ card.name }}</div>
         {{ card.archetype }}
     </div>

@@ -20,8 +20,8 @@ export default {
 
 <template lang="">
     <div>
-        <div class="container my-cont">
-            <div class="row my-row">
+        <div class="container my-cont p-5">
+            <div class="row">
                 <CardInfo v-for="card, index in store.cardsList" :key="index" :card="card" />
             </div>
         </div>
